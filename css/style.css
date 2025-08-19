@@ -1,0 +1,100 @@
+
+.header
+{
+  height:100px;
+  background-color: rgb(129, 129, 184)
+}
+.logo
+{
+  width:80px;
+   height:90px;
+   margin:5px;
+   border-radius: 12px;
+   float: left;
+  }
+ 
+  h1
+  {
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+
+  }
+ .menu
+{
+  height: 30px;
+
+  
+}
+  
+
+.content 
+ {
+  height: 100%;
+  background-color: rgb(231, 225, 225);
+} 
+
+.footer
+{
+  height: 50px;
+  background-color: gray;
+  text-align: center;
+  padding-top:10px;
+  color:aliceblue;
+  font-size: 20px;
+}
+.form{
+  padding-top:50px;
+  padding:20px;
+  height:340px;
+  margin-top:30px;
+  box-shadow: rgb(213, 151, 151) 0 0 40px;
+  border-radius: 10px;
+}
+button[type="submit"]{
+  padding-left: 100px;
+  padding-right: 100px;
+  font-size: 20px;
+
+}
+.form2{
+
+  padding:15px;
+  height:580px;
+  margin-top:12px;
+  box-shadow: rgb(63, 44, 44) 0 0 30px;
+  border-radius: 10px;
+}
+.forms
+{
+  box-shadow: white 0px 0px 50px;
+  
+  border-radius: 30px;
+
+
+
+}
+
+
+.btn1
+{
+  margin-top:5px ;
+  text-align: center;
+}
+h2{
+  margin-top: 0px;;
+}
+label
+{
+  font-size: 18px;
+
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.input-group-addon
+{
+  width:100px;
+  background-color: rgb(189, 185, 185);
+  border-radius: 8px 8px;
+  padding-left: 5px;
+  
+}
