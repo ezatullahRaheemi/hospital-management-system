@@ -59,7 +59,7 @@ if(isset($_POST["name"]))
                     </div >
                     <div class="form-group mb-1">
                         <label for="">Address:</label> 
-                        <input type="text" name="address" class="form-control"
+                          <input type="text" name="address" class="form-control"
                         value="<?php echo $row_patient["address"]?>">
                     </div >
                     <div >
