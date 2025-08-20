@@ -1,17 +1,6 @@
 <?php require("securt.php")?>
 <?php require_once("header.php");?>
 
-<?php 
- error_reporting(0);
-
-if($_GET["add"]){
-?>
-<div class="alert alert-success">
-    New Staff has been   Successfully Added!
-
-</div>
-
-<?php  }?>
 <?php
 require("connection.php");
 
@@ -20,9 +9,20 @@ $result = mysqli_query($conn,$sql);
 $row_staff = mysqli_fetch_assoc($result);
 
 ?>
+<?php 
+         error_reporting(0);
+
+        if($_GET["update"]){
+        ?>
+        <div class="alert alert-success">
+            Staff Has Been   Successfully Updated!
+        </div>
+        <?php  }?>
 
 <div class="table-responsive">
-    <table class="table table-striped">
+    <table class="table table-striped ">
+        <h1 class="offset-5">Staff List</h1>
+        
         <tr>
             <th>S/N</th>
             <th>ID</th>
@@ -33,9 +33,9 @@ $row_staff = mysqli_fetch_assoc($result);
             <th>Salary</th>
             <th>Edit</th>
             <th>Delete</th>
-            
-
         </tr>
+                
+        
         <?php $s=1; do{?>
         <tr>
             <td><?php echo $s++;?></td>
