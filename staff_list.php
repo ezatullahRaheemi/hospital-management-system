@@ -1,5 +1,6 @@
 <?php require("securt.php")?>
 <?php require_once("header.php");?>
+<script type="text/javascript"  src="js/script.js"> </script>
 
 <?php
 require("connection.php");
@@ -15,11 +16,11 @@ $row_staff = mysqli_fetch_assoc($result);
         if($_GET["update"]){
         ?>
         <div class="alert alert-success">
-            Staff Has Been   Successfully Updated!
+            <h5 class="text-center">Staff Has Been   Successfully Updated!</h5>
         </div>
         <?php  }?>
 
-<div class="table-responsive">
+<div class="table-responsive p-2">
     <table class="table table-striped ">
         <h1 class="offset-5">Staff List</h1>
         

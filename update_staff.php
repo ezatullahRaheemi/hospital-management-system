@@ -74,8 +74,8 @@ ob_start();
  }
 ?>
 
-<div class="col-md-6  offset-3 pt-3 pb-3 ">
-            <form class="forms" method ="POST" enctype="multipart/form-data">
+<div class="col-md-6  offset-3 pt-3  ">
+            <form class="forms pb-3" method ="POST" enctype="multipart/form-data">
             <h1>Update Staff</h1>
             
             <?php if(isset($_GET["error"])) { ?>

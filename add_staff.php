@@ -65,7 +65,7 @@ ob_start();
 <div class="col-md-6  offset-3 pt-3 pb-3 ">
     
 
-            <form class="forms" method ="POST" enctype="multipart/form-data">
+            <form class="forms pe-3" method ="POST" enctype="multipart/form-data">
             <h1>Add Staff</h1>
             
             <?php if(isset($_GET["error"])) { ?>

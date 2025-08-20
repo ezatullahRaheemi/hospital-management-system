@@ -114,7 +114,7 @@ if(!isset($_SESSION))
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="add_staff.php">Add New Staff</a></li>
                   <li><a class="dropdown-item" href="staff_list.php">Staff List</a></li>
-                  <li><a class="dropdown-item" href="#">Staff Attendance </a></li>
+                  <li><a class="dropdown-item" href="attendance_list.php">Staff Attendance </a></li>
                   <li><a class="dropdown-item" href="#">Staff Salary </a></li>
                   <li><a class="dropdown-item" href="#">Staff Schedule </a></li>
                 </ul>
