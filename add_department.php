@@ -13,7 +13,7 @@ $result = mysqli_query($conn,$sql);
 <div class="container ">
     <div class="row">
         <div class="col-6 offset-3">
-            <form action=""method="POST" class="form" style="margin-top:80px;">
+            <form action=""method="POST" class="form" style="margin-top:80px; margin-bottom:70px">
                 <h1 class="text-center">Add department</h1>
                 
                 <div class="form-group"><br><br><br><br>

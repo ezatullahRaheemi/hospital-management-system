@@ -26,7 +26,7 @@ error_reporting(0);
 
  <div class="container">
     <div class="row ">
-        <div class="col-md-6 offset-3 " style="margin-top:60px;">
+        <div class="col-md-6 offset-3 " style="margin-top:60px; margin-bottom:55px;">
             <form class="form" method="POST" >
                 <h2 style="text-align:center" >Login</h2>
                 <?php if(isset($_GET["logout"])){ ?>

@@ -43,7 +43,7 @@ $row_staff = mysqli_fetch_assoc($result);
             <td><?php echo $row_staff["staff_id"] ?></td>
             <td><?php echo $row_staff["first_name"] ?></td>
             <td><?php echo $row_staff["last_name"] ?></td>
-            <td><img src="<?php echo $row_staff["photo"] ?>" width="50px;" class="img-rounded"></td>
+            <td><img src="<?php echo $row_staff["photo"] ?>" width="50px;"height="50px" class="img-circle"></td>
             <td><?php echo $row_staff["position"] ?></td>
             <td><?php echo $row_staff["grass_salary"] ?></td>
           <td>
