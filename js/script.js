@@ -9,4 +9,8 @@ $(document).ready(function(){
     window.setTimeout(function(){
         $(".alert").slideUp(1000);
     }, 5000);
+    $("a.print").click(function(){
+        window.print();
+    });
+    
 });
