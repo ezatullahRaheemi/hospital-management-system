@@ -28,7 +28,7 @@ error_reporting(0);
     <div class="row ">
         <div class="col-md-6 offset-3 " style="margin-top:60px; margin-bottom:55px;">
             <form class="form" method="POST" >
-                <h2 style="text-align:center" > Admin Login</h2>
+                <h2 style="text-align:center" ><span class="fa fa-lock " style="color:green; font-size:30px;"></span> Admin Login</h2>
                 <?php if(isset($_GET["logout"])){ ?>
                    
                    <div class="alert alert-success p-2">
@@ -54,7 +54,7 @@ error_reporting(0);
                     </div >
 
                     <div class="btn1">
-                    <button type="submit" value="" class="btn btn-success  ">Submit</button>
+                    <button type="submit" value="" class="btn btn-success mt-3 ">Submit</button>
                     </div>
                      
             </form>
