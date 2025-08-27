@@ -6,38 +6,38 @@ require_once("header.php");?>
 <?php
 require("connection.php");
 
-    // if(isset($_GET["month"]))
-    // {
-    //     $year = $_GET["year"];
-    //     $month = $_GET["month"];
-    // }else{
-    //     $year = date('Y');
-    //     $month = date('m');
-    // }
-    // $year = $_GET["year"];
-    // $month = $_GET["month"];
+    if(isset($_GET["month"]))
+    {
+        $year = $_GET["year"];
+        $month = $_GET["month"];
+    }else{
+        $year = date('Y');
+        $month = date('m');
+    }
+    $year = $_GET["year"];
+    $month = $_GET["month"];
 
     // this code for search
      $condition = "";
      if(isset($_GET["search"]))
      {
         $search = $_GET["search"];
-        $condition = "WHERE first_name like'%$search%' OR last_name like'%$search%' OR attendance.staff_id like'$search'";
+        $condition = "WHERE first_name like'%$search%' OR last_name like'%$search%' OR staff.staff_id like'$search'";
      }
 
-     // select for attendance
-    $sql ="SELECT * FROM staff INNER JOIN attendance on staff.staff_id = attendance.staff_id $condition ";
-     $run_attendance = mysqli_query($conn , $sql);
-    $row_attendance = mysqli_fetch_assoc($run_attendance);
-    $totalrow_attendance =mysqli_num_rows($run_attendance);
-    
-    
+     // select for salary
+    $sql ="SELECT *, (SELECT net_salary FROM salary WHERE staff_id = staff.staff_id) AS net_salary FROM staff $condition ";
+     $run_salary = mysqli_query($conn , $sql);
+    $row_salary = mysqli_fetch_assoc($run_salary);
+    $totalrow_salary =mysqli_num_rows($run_salary);
+
+   
 ?>
 
-    <h1 class="m-0 ms-3">Staff Attendance</h1>
+    <h1 class="mt-2 ms-3 ms-3">Staff Salary</h1>
 
-        <a  href="attendance_add.php" class="btn  btn-info offset-11 p-1 mb-0  print"><span class="fa fa-plus"></span>   Add Absent</a>
-         <!-- <a href="#" class="btn  btn-info offset-10 p-1 mb-2 mt-0"><span class="fa fa-print"></span>  Print</a> -->
+        <!-- <a  href="add_salary.php" class="btn  btn-info offset-11 p-1 mb-0  print"><span class="fa fa-plus"></span>   Pay Salary</a> -->
+         <a href="#" class="btn  btn-info offset-11 p-1 mb-1 mt-0"><span class="fa fa-print"></span>  Print</a>
         
 <div class=" table-responsive">
   <div class=" pt-2 p-2 ">
@@ -83,29 +83,29 @@ require("connection.php");
             
             <?php if($_GET["add"]){?>
                     <div class="alert alert-success">
-                        <h4>Could has been Staff Absented!!</h4> 
+                        <h4>Could has been Staff Salary!</h4> 
                     </div>
                 <?php } ?>
 
                 <?php if($_GET["update"]){?>
                     <div class="alert alert-success">
-                        <h4>Could has been Attendance Update!</h4> 
+                        <h4>Could has been Salary Update!</h4> 
                     </div>
                 <?php } ?>
 
                     <?php if($_GET["delete"]){?>
                         <div class="alert alert-success">
-                                <h4>Could has been Absent successfully deleted!</h4> 
+                                <h4>Could has been Salary successfully deleted!</h4> 
                         </div>
                     <?php } ?>
 
                     <?php if($_GET["error"]){?>
                         <div class="alert alert-danger">
-                                <h4>Could not has been Absent deleted!</h4> 
+                                <h4>Could not has been salary deleted!</h4> 
                         </div>
                     <?php } ?>
 
-                <?php if($totalrow_attendance>0){?>
+                <?php if($totalrow_salary>0){?>
 
             <tr>
                 <th>Staff ID</th>
@@ -113,39 +113,43 @@ require("connection.php");
                 <th>Last Name</th>
                 <th>Photo</th>
                 <th>Position</th>
-                <th>Absent Day</th>
-                <th>Absent Hour</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>Net Salary</th>
+                <!-- <th>Edit</th>
+                <th>Delete</th> -->
             </tr>
 
                 <?php do { ?>
             <tr>
-                <td><?php echo $row_attendance["staff_id"]?></td>
-                <td><?php echo $row_attendance["first_name"]?></td>
-                <td><?php echo $row_attendance["last_name"]?></td>
-                <td> <img width="45px;" height="45px" src="<?php echo $row_attendance["photo"]?>" alt=""></td>
-                <td><?php echo $row_attendance["position"]?></td>
-                <td><?php echo $row_attendance["absent_year"]?>/<?php echo $row_attendance["absent_month"]?>/<?php echo $row_attendance["absent_day"]?></td>
-                <td><?php echo $row_attendance["sbsent_houre"]?></td>
-                <td > 
-                    <a href="attendance_update.php?sid=<?php echo $row_attendance["staff_id"]?>&year=<?php echo $row_attendance["absent_year"]?>&month=<?php echo $row_attendance["absent_month"]?>&day=<?php echo $row_attendance["absent_day"]?>">
+                <td><?php echo $row_salary["first_name"]?></td>
+                <td><?php echo $row_salary["staff_id"]?></td>
+                <td><?php echo $row_salary["last_name"]?></td>
+                <td> <img width="45px;" height="45px" src="<?php echo $row_salary["photo"]?>" alt=""></td>
+                <td><?php echo $row_salary["position"]?></td>
+                <td>
+                <?php if($row_salary["net_salary"]== ""){ ?>
+                  <a href="add_salary.php?sid=<?php echo $row_salary['staff_id']?>&month=$month&year=$year" class="btn btn-primary">Pay Salary</a>
+                  <?php }else{ ?>
+                         <?php echo $row_salary["net_salary"];?>
+                    <?php } ?>
+                </td>
+                <!-- <td > 
+                    <a href="attendance_update.php?sid=<?php echo $row_salary["staff_id"]?>&year=<?php echo $row_attendance["absent_year"]?>&month=<?php echo $row_attendance["absent_month"]?>&day=<?php echo $row_attendance["absent_day"]?>">
                     <span class="fa fa-edit"></span>
                     </a>
                 </td>
 
                 <td>
-                    <a href="delete_attendance.php?sid=<?php echo $row_attendance["staff_id"]?>&year=<?php echo $row_attendance["absent_year"]?>&month=<?php echo $row_attendance["absent_month"]?>&day=<?php echo $row_attendance["absent_day"]?>">
+                    <a href="delete_attendance.php?sid=<?php echo $row_salary["staff_id"]?>&year=<?php echo $row_attendance["absent_year"]?>&month=<?php echo $row_attendance["absent_month"]?>&day=<?php echo $row_attendance["absent_day"]?>">
                         <span class="fa fa-trash"></span>
                     </a>
-                </td>
+                </td> -->
             </tr>
 
-                <?php }while($row_attendance = mysqli_fetch_assoc($run_attendance)) ?>
+                <?php }while($row_salary = mysqli_fetch_assoc($run_salary)); ?>
                 <?php } else{?>
                     <div class="alert alert-warning mt-2 text-center ">
-                    <h2>There is no Absent data</h2> 
-                    </div>
+                    <h2>There is no Salary</h2> 
+    
                 <?php }?>
         </table>
     

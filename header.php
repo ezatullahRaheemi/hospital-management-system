@@ -99,8 +99,8 @@ if(!isset($_SESSION))
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Add New Income</a></li>
                   <li><a class="dropdown-item" href="#">Income List</a></li>
-                  <li><a class="dropdown-item" href="#">Add New Expense</a></li>
-                  <li><a class="dropdown-item" href="#">Expense List  </a></li>
+                  <li><a class="dropdown-item" href="add_expense.php">Add New Expense</a></li>
+                  <li><a class="dropdown-item" href="expense_list.php">Expense List  </a></li>
                   
                 </ul>
               </li>
@@ -115,7 +115,7 @@ if(!isset($_SESSION))
                   <li><a class="dropdown-item" href="add_staff.php">Add New Staff</a></li>
                   <li><a class="dropdown-item" href="staff_list.php">Staff List</a></li>
                   <li><a class="dropdown-item" href="attendance_list.php">Staff Attendance </a></li>
-                  <li><a class="dropdown-item" href="#">Staff Salary </a></li>
+                  <li><a class="dropdown-item" href="salary_list.php">Staff Salary </a></li>
                   <li><a class="dropdown-item" href="#">Staff Schedule </a></li>
                 </ul>
               </li>

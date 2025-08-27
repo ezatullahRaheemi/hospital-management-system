@@ -11,7 +11,6 @@ $condition = "";
 
  }
 
-
 $patient = "SELECT * FROM patient $condition";
 $run_patient =mysqli_query($conn,$patient);
 $row_patient = mysqli_fetch_assoc($run_patient);
@@ -30,11 +29,10 @@ $totalRows_patient = mysqli_num_rows($run_patient);
 
                 <form class="form" action=""method="get">
                     <div class="input-group">
-                        <input type="search"name="search" class="form-control">
+                        <input type="search"name="search" class="form-control" placeholder="Search By ID / Name">
                         <span class="input-group-btn ">
                         <button type="submit" class="btn btn-primary"><span class="fa fa-search pe-2 "></span>Search</button>
                         </span>
-
                     </div>
                 </form>
                 <?php 

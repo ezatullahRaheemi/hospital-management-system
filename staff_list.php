@@ -4,10 +4,19 @@
 
 <?php
 require("connection.php");
-
-$sql = "SELECT * FROM staff";
+// select for search
+ $condition="";
+ if(isset($_GET['search']))
+ {
+    $search = $_GET["search"];
+    $condition = "WHERE first_name like'%$search%' OR last_name like'%$search%' OR  staff_id like'$search'";
+ }
+// select for table
+$sql = "SELECT * FROM staff $condition";
 $result = mysqli_query($conn,$sql);
 $row_staff = mysqli_fetch_assoc($result);
+// for search
+ $totalrows_staff = mysqli_num_rows($result); 
 
 ?>
 <?php 
@@ -23,7 +32,16 @@ $row_staff = mysqli_fetch_assoc($result);
 <div class="table-responsive p-2">
     <table class="table table-striped ">
         <h1 class="offset-5">Staff List</h1>
-        
+        <form action="">
+            <div class="input-group">
+                <input type="search"  name="search" class="form-control"placeholder="Search By ID /First Name/ Last Name !">
+                <span>
+                    <button class="btn btn-primary" type="submit"> <span class="fa fa-search"></span> Search</button>
+                </span>
+            </div>
+        </form>
+        <?php if($totalrows_staff > 0){ ?>      
+
         <tr>
             <th>S/N</th>
             <th>ID</th>
@@ -35,7 +53,6 @@ $row_staff = mysqli_fetch_assoc($result);
             <th>Edit</th>
             <th>Delete</th>
         </tr>
-                
         
         <?php $s=1; do{?>
         <tr>
@@ -57,12 +74,15 @@ $row_staff = mysqli_fetch_assoc($result);
             </a>
         </td>
 
-
-
         </tr>
         <?php }while($row_staff = mysqli_fetch_assoc($result))?>
-
+         <?php } else{?>
+           <div class="alert alert-warning mt-3 text-center">
+           <h2>  There is no Staff!</h2>
+           </div> 
+         <?php } ?>
     </table>
+
 </div>
 
 

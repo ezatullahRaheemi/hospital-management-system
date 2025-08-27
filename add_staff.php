@@ -91,62 +91,62 @@ ob_start();
                     <span class="input-group-addon">
                         First Name :
                     </span>
-                    <input type="text"name="firstname" class="form-control">
+                    <input type="text"name="firstname" class="form-control" placeholder="Write First Name  !">
                 </div>
                 
                 <div class="input-group m-2">
                     <span class="input-group-addon">
                         Last Name :
                     </span>
-                    <input type="text" name = "lastname" class="form-control">
+                    <input type="text" name = "lastname" class="form-control"placeholder="Write Last Name  !">
                 </div>
                 <div class="input-group m-2 ">
                     <span class="input-group-addon">
                         Birth Year :
                     </span>
-                    <input type="text" name="byear" class="form-control">
+                    <input type="text" name="byear" class="form-control" placeholder="Write Birth Year  !">
                 </div>
                 <div class="input-group m-2">
                     <span class="input-group-addon">
                         Position :
                     </span>
-                    <input type="text" name="position" class="form-control">
+                    <input type="text" name="position" class="form-control"placeholder="Write Position  !">
                 </div>
                 <div class="input-group m-2">
                     <span class="input-group-addon">
                         Education :
                     </span>
-                    <input type="text" name="education" class="form-control">
+                    <input type="text" name="education" class="form-control"placeholder="Write Education  !">
                 </div>
                 <div class="input-group m-2">
                     <span class="input-group-addon">
                     Email :
                     </span>
-                    <input type="email" name="email" class="form-control">
+                    <input type="email" name="email" class="form-control" placeholder="Write Email  !">
                 </div>
                 <div class="input-group m-2">
                     <span class="input-group-addon">
                         Address :
                     </span>
-                    <input type="text" name="address" class="form-control">
+                    <input type="text" name="address" class="form-control"placeholder="Write Address  !">
                 </div>
                 <div class="input-group m-2">
                     <span class="input-group-addon">
                         Phone :
                     </span>
-                    <input type="number" name="phone" class="form-control">
+                    <input type="number" name="phone" class="form-control"placeholder="Write Phone Number  !">
                 </div>
                 <div class="input-group m-2">
                     <span class="input-group-addon">
-                        grass Salary :
+                        Grass Salary :
                     </span>
-                    <input type="number" name="gsalary" class="form-control">
+                    <input type="number" name="gsalary" class="form-control"placeholder="Write Grass Salary  !">
                 </div>
                 <div class="input-group m-2">
                     <span class="input-group-addon">
-                        hires Date :
+                        Hires Date :
                     </span>
-                    <input type="number" name="hdate" class="form-control">
+                    <input type="number" name="hdate" class="form-control"placeholder="Write Hire date  !">
                 </div>
                 <div class="input-group m-2">
                     <span class="input-group-addon">
