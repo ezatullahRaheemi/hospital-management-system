@@ -7,11 +7,13 @@
         "jdate",
         "Lablatvoar",
         "lastname",
+        "madein",
         "nsalay",
         "Oppointment",
         "sbsent",
         "securt",
         "spone",
-        "stype"
+        "stype",
+        "unitprice"
     ]
 }

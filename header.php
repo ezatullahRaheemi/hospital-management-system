@@ -69,8 +69,8 @@ if(!isset($_SESSION))
                   Pharmacy
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Add New Medicine</a></li>
-                  <li><a class="dropdown-item" href="#">Medicine List</a></li>
+                  <li><a class="dropdown-item" href="add_medicine.php">Add New Medicine</a></li>
+                  <li><a class="dropdown-item" href="medicine_list.php">Medicine List</a></li>
                   <li><a class="dropdown-item" href="#">Patient Medicine</a></li>
                   <li><a class="dropdown-item" href="#">Shortage Medicine </a></li>
                   
@@ -97,8 +97,8 @@ if(!isset($_SESSION))
                   Finance
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Add New Income</a></li>
-                  <li><a class="dropdown-item" href="#">Income List</a></li>
+                  <li><a class="dropdown-item" href="income_add.php">Add New Income</a></li>
+                  <li><a class="dropdown-item" href="income_list.php">Income List</a></li>
                   <li><a class="dropdown-item" href="add_expense.php">Add New Expense</a></li>
                   <li><a class="dropdown-item" href="expense_list.php">Expense List  </a></li>
                   

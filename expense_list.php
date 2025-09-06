@@ -20,7 +20,7 @@ error_reporting(0);
  
   <div class="table-responsive p-2 " >
     <table class="table table-striped ">
-        <h1 >Expenses List</h1>
+        <h2 class="text-center mt-2" style="font-size:40px;" >Expenses List</h2>
         <div class="mb-2">
         <form action="" >
                 <div class="input-group">
@@ -41,9 +41,11 @@ error_reporting(0);
         <tr>
             <th>ID</th>
             <th>Amount</th>
-            
             <th>Expense Type</th>
             <th>Date</th>
+            <th>Edit</th>
+            <th>Delete</th>
+
         </tr>
         <?php do{ ?>
         <tr>
@@ -51,6 +53,12 @@ error_reporting(0);
             <td><?php echo $row_expense["amount"]?> <?php echo $row_expense["currency"]?></td>
             <td><?php echo $row_expense["expense_type"]?></td>
             <td><?php echo $row_expense["expense_date"]?></td>
+            <td>
+                <a href="update_income.php"> <span class="fa fa-edit"></span></a>
+            </td>
+            <td>
+                <a href="delete_income.php"> <span class="fa fa-trash" style="color:red"></span></a>
+            </td>
         </tr>
  
     <?php }while($row_expense = mysqli_fetch_assoc($run_expense));?>

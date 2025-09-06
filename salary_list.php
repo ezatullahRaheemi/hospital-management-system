@@ -26,7 +26,7 @@ require("connection.php");
      }
 
      // select for salary
-    $sql ="SELECT *, (SELECT net_salary FROM salary WHERE staff_id = staff.staff_id) AS net_salary FROM staff $condition ";
+    $sql ="SELECT *,(SELECT net_salary FROM salary WHERE staff_id = staff.staff_id) AS net_salary FROM staff $condition ";
      $run_salary = mysqli_query($conn , $sql);
     $row_salary = mysqli_fetch_assoc($run_salary);
     $totalrow_salary =mysqli_num_rows($run_salary);
